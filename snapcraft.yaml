@@ -1,0 +1,62 @@
+name: tapaal
+title: TAPAAL
+version: 3.6.0
+
+summary: TAPAAL is free software for modeling and verification of Petri nets
+description: | 
+        TAPAAL is a tool for
+          - modelling, simulation and verification of
+          - Timed-Arc Petri nets
+          - developed at Department of Computer Science at AALborg University in Denmark
+          - and available for Linux, Windows and Mac OS X platforms.
+
+architectures:
+  - build-on: amd64
+    run-on: amd64
+
+base: core18
+
+confinement: strict
+
+apps:
+        tapaal:
+                extensions:
+                        - gnome-3-28
+                command: tapaal-$SNAPCRAFT_PROJECT_VERSION-linux64/tapaal
+                environment:
+                          JAVA_HOME: "$SNAP/usr/lib/jvm/java-11-openjdk-amd64"
+                          PATH: "$JAVA_HOME/bin:$PATH"
+                plugs:
+                        - home
+                        - network
+                        - cups-control
+                        - desktop
+                        - desktop-legacy
+                        - wayland
+                        - x11
+        
+        verifytapn:
+                command: tapaal-$SNAPCRAFT_PROJECT_VERSION-linux64/bin/verifytapn64
+                plugs:
+                        - home
+        verifydtapn:
+                command: tapaal-$SNAPCRAFT_PROJECT_VERSION-linux64/bin/verifydtapn64
+                plugs:
+                        - home
+        verifypn:
+                command: tapaal-$SNAPCRAFT_PROJECT_VERSION-linux64/bin/verifypn64
+                plugs:
+                        - home
+parts:
+        java:
+                plugin: nil
+                build-packages:
+                  - ca-certificates
+                  - ca-certificates-java
+                  - openjdk-11-jre
+                stage-packages:
+                  - openjdk-11-jre
+        tapaal:
+                plugin: dump
+                source: http://tapaal.net/fileadmin/download/tapaal-3.6/tapaal-3.6.0-linux64.zip
+
