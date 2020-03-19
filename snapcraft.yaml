@@ -58,5 +58,4 @@ parts:
                   - openjdk-11-jre
         tapaal:
                 plugin: dump
-                source: http://tapaal.net/fileadmin/download/tapaal-3.6/tapaal-3.6.1-linux64.zip
-
+                source: http://download.tapaal.net/fileadmin/download/tapaal-3.6/tapaal-3.6.1-linux64.zip
