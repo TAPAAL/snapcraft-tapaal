@@ -1,6 +1,6 @@
 name: tapaal
 title: TAPAAL
-version: 3.9.1
+version: 3.9.2
 
 summary: TAPAAL is free software for modeling and verification of Petri nets
 description: | 
@@ -58,4 +58,4 @@ parts:
                   - openjdk-11-jre
         tapaal:
                 plugin: dump
-                source: https://download.tapaal.net/tapaal/tapaal-3.9/tapaal-3.9.1-linux64.zip
+                source: https://download.tapaal.net/tapaal/tapaal-3.9/tapaal-3.9.2-linux64.zip
