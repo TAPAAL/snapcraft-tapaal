@@ -21,7 +21,7 @@ confinement: strict
 apps:
         tapaal:
                 extensions:
-                        - gnome-3-34
+                        - gnome-3-28
                 command: tapaal-$SNAPCRAFT_PROJECT_VERSION-linux64/tapaal
                 environment:
                           JAVA_HOME: "$SNAP/usr/lib/jvm/java-11-openjdk-amd64"
